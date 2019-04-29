@@ -7,7 +7,7 @@
 export default function (ajax, env, model) {
 
     // 存储集合
-    let local = {}; 
+    let local = {};
 
 
     return local;

@@ -3,7 +3,7 @@
  */
 
 // cookie
-import * as cookie from "koi/util/cookie";
+import * as cookie from "./koi/util/cookie";
 
 function getQuery(str, key) {
     return new RegExp("[&? ]" + key + "=([^&]*)&?", "i" || undefined).test("&" + str) ? RegExp.$1 : "";

@@ -52,6 +52,8 @@ module.exports = {
     plugins: ["vue"],
     // add your custom rules here
     rules: {
+        // 不要求使用骆驼拼写法
+        "properties": "always",
         // allow async-await
         "generator-star-spacing": "off",
         // 引号类型 `` "" '' 不限制

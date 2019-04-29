@@ -1,11 +1,12 @@
 // ajax库
-import _ajax from "koi/util/ajax";
+import _ajax from "./koi/util/ajax";
 
 // 拦截器
-import {interceptors, setURLPaths, getServerDate} from "./model/interceptors";
+import {interceptors, getServerDate} from "./model/interceptors";
 
-// 收单
-import _collect from "./model/collect";
+import _demo from './model/demo';
+
+export let demo = _demo(_ajax, env, modelFn);
 
 // 本地存储模块
 import _local from "./local";
@@ -25,9 +26,6 @@ let modelFn = {};
 interceptors(ajax, env, modelFn);
 
 
-// 收单模块
-export let collect = _collect(ajax, env, modelFn, setURLPaths);
-
 // 本地存储
 export let local = _local(ajax, env, modelFn);
 
@@ -35,7 +33,7 @@ export let local = _local(ajax, env, modelFn);
 Object.assign(modelFn, {
     env,
     getServerDate,
-    collect
+    demo
 });
 
 // 是否安装过

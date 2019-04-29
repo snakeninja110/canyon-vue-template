@@ -59,7 +59,10 @@ const devWebpackConfig = merge(baseWebpackConfig, {
       template: 'index.html',
       inject: true,
       chunks: {
-        vendors: PUBLICPATH + '/js/vendors.dll.js'
+        vendors: {
+          js: PUBLICPATH + '/js/vendors.dll.js',
+          css: PUBLICPATH + '/css/vendors.dll.css'
+        }
       }
     }),
     // copy custom static assets

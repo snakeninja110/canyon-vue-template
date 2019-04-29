@@ -6,6 +6,7 @@ const config = require('../config')
 const merge = require('webpack-merge')
 const baseWebpackConfig = require('./webpack.base.conf')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
+const CleanWebpackPlugin = require('clean-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 // const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
@@ -52,26 +53,15 @@ const webpackConfig = merge(baseWebpackConfig, {
   plugins: [
     // http://vuejs.github.io/vue-loader/en/workflow/production.html
     // new webpack.DefinePlugin({
-    //   'process.env': env
+    //   'process.env': env,
+    //   'process.sign': JSON.stringify(sign.sign)
     // }),
-    // new UglifyJsPlugin({
-    //   uglifyOptions: {
-    //     compress: {
-    //       warnings: false
-    //     }
-    //   },
-    //   sourceMap: config.build.productionSourceMap,
-    //   parallel: true
-    // }),
-    // extract css into its own file
-    // new ExtractTextPlugin({
-    //   filename: utils.assetsPath('css/[name].[contenthash].css'),
-    //   // Setting the following option to `false` will not extract CSS from codesplit chunks.
-    //   // Their CSS will instead be inserted dynamically with style-loader when the codesplit chunk has been loaded by webpack.
-    //   // It's currently set to `true` because we are seeing that sourcemaps are included in the codesplit bundle as well when it's `false`, 
-    //   // increasing file size: https://github.com/vuejs-templates/webpack/issues/1110
-    //   allChunks: true,
-    // }),
+    // 删除dist下所有目录，保留monitor.html
+    // 新版CleanWebpackPlugin会根据output中的path定位打包文件夹，需要path use full path. path.join(process.cwd(), 'build/**/*')
+    new CleanWebpackPlugin({
+      dry: false, // true 为模拟删除
+      cleanOnceBeforeBuildPatterns:['**/*', '!monitor.html']
+    }),
 
     // 升级 webpack4， 由 ExtractTextPlugin 改用 MiniCssExtractPlugin
     new MiniCssExtractPlugin({

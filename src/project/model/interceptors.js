@@ -2,11 +2,11 @@
  * 2018-09-26 [-]去除风控
  */
 // QS
-import * as QS from "koi/util/querystring";
+import * as QS from "../koi/util/querystring";
 // import { getFullUrl } from "koi/util/misc";
 import {
     oc
-} from "koi/util/optionalchaining";
+} from "../koi/util/optionalchaining";
 
 // 参数的简单扩展
 function extra(...arg) {

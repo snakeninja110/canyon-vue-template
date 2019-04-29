@@ -1,5 +1,11 @@
 # my-project
 
+## Vue+Element PC模板
+
+
+[![996.icu](https://img.shields.io/badge/link-996.icu-red.svg)](https://996.icu)
+[![LICENSE](https://img.shields.io/badge/license-NPL%20(The%20996%20Prohibited%20License)-blue.svg)](https://github.com/996icu/996.ICU/blob/master/LICENSE)
+
 > A Vue.js project
 
 ## Build Setup
@@ -8,7 +14,10 @@
 # install dependencies
 npm install
 
-# serve with hot reload at localhost:8080
+# frist generate dll files
+npm run dll
+
+# serve with hot reload at {your ip address}:3000
 npm run dev
 
 # build for production with minification
