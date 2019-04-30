@@ -42,7 +42,7 @@ function gitPush(version) {
             // console.log(results);
             
             
-            console.log(chalk.cyan(`tag发布成功， ----- ${version}`));
+            console.log(chalk.cyan(`git发布成功， ----- ${version}`));
         } catch (e) {
             console.log("");
             console.log("");
