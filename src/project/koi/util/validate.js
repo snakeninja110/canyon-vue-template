@@ -132,7 +132,7 @@ export function isUrl(target) {
  * @returns {boolean} flag
  */
 export function isIP(obj) { //是否为IP
-    if (!obj || result.isNull(obj)) return false; // eslint-disable-line
+    if (!obj) return false; // eslint-disable-line
 
     var re = /^(\d+)\.(\d+)\.(\d+)\.(\d+)$/g //匹配IP地址的正则表达式
     if (re.test(obj)) {

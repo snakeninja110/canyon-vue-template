@@ -18,7 +18,7 @@ export default function(ajax) {
 
     demo.search = (params, callback) => {
         ajax.get(
-            "webapi:search/searchTrainList",
+            "webapi:search/searchList",
             res => {
                 callback && callback(res);
             },

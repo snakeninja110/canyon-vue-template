@@ -16,13 +16,13 @@
 </template>
 
 <script>
-import {setItem as setCookie, getItem as getCookie} from '@/project/koi/util/cookie'
-const accountCookieKey = 'train_account';
+// import {setItem as setCookie, getItem as getCookie} from '@/project/koi/util/cookie'
+// const accountCookieKey = 'train_account';
 export default {
     data() {
         return {
             form: {
-                account: getCookie(accountCookieKey) || '',
+                account: '', // getCookie(accountCookieKey) || 
                 pwd: '',
                 refid: ''
             },
@@ -39,30 +39,27 @@ export default {
                 this.$message.error('请填写密码');
                 return;
             }
-            if (this.form.refid === '') {
-                this.$message.error('请选择站点');
-                return;
-            }
             this.submit();
         },
         submit() {
-            let form = {
-                userName: this.form.account,
-                password: this.form.pwd
-            };
-            this.$model.demo.login(
-                form,
-                (res) => {
-                    if (res.data.success) {
-                        setCookie(accountCookieKey, form.userName, 99, '/', location.hostname);
-                        setCookie('token', res.data.token, 0.5, '/', location.hostname);
-                        this.$unicom('user_login');
-                        this.$router.push('/index');
-                    } else {
-                        this.$message.error(res.err || '登录失败');
-                    }
-                }
-            );
+            // let form = {
+            //     userName: this.form.account,
+            //     password: this.form.pwd
+            // };
+            this.$router.push('/index');
+            // this.$model.demo.login(
+            //     form,
+            //     (res) => {
+            //         if (res.data.success) {
+            //             setCookie(accountCookieKey, form.userName, 99, '/', location.hostname);
+            //             setCookie('token', res.data.token, 0.5, '/', location.hostname);
+            //             this.$unicom('user_login');
+            //             this.$router.push('/index');
+            //         } else {
+            //             this.$message.error(res.err || '登录失败');
+            //         }
+            //     }
+            // );
         }
     }
 }

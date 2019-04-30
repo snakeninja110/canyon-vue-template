@@ -92,7 +92,7 @@ export default {
         search() {
             this.loading = true;
             let fromDate = formatDate(this.formLabelAlign.date);
-            this.$model.item.search(
+            this.$model.demo.search(
                 {
                     name: this.formLabelAlign.name,
                     price: this.formLabelAlign.price,
