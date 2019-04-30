@@ -4,6 +4,8 @@
 
 const path = require('path')
 
+const version = global.version;
+
 module.exports = {
   dev: {
 
@@ -49,7 +51,7 @@ module.exports = {
 
     // Paths
     assetsRoot: path.resolve(__dirname, '../dist'),
-    assetsSubDirectory: 'static',
+    assetsSubDirectory: version, //'static',
     assetsPublicPath: '/',
 
     /**

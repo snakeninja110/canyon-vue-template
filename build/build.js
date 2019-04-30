@@ -41,9 +41,9 @@ spinner.start()
       '  Opening index.html over file:// won\'t work.\n'
     ))
 
-    let callback = function() {
+    // let callback = function() {
       console.log("\x1B[33m 编译版本号:" + version + "\x1B[0m");
-    }
+    // }
     //  上传git
     let flag = gitPush(version);
     // 上传狮子座
